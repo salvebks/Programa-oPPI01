@@ -1,0 +1,31 @@
+{
+  "name": "programa-oppi01",
+  "version": "1.0.0",
+  "description": "Primeiro Programa para a Internet usando node + express",
+  "keywords": [
+    "http",
+    "express",
+    "node",
+    "PPI"
+  ],
+  "homepage": "https://github.com/salvebks/Programa-oPPI01#readme",
+  "bugs": {
+    "url": "https://github.com/salvebks/Programa-oPPI01/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salvebks/Programa-oPPI01.git"
+  },
+  "license": "ISC",
+  "author": "Murillo Henrique",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+
+}
