@@ -85,7 +85,8 @@ server.get('/tabela', (requisicao, resposta) => {
         .Titulo4 {
             background-color: lightgreen;
         }
-            
+        .URL {
+            color: blue;
     </style>
 
 </head>
@@ -151,10 +152,61 @@ server.get('/tabela', (requisicao, resposta) => {
         <td>17,00</td>
         <td>12,00</td>
     </tr>
+    <tr>
 </tbody>
+</table>
+<p>Para Simular o Salario, clique <a href="/idade=18&sexo=F&salario_base=1700&anoContratacao=2014&matricula=12345">aqui</a></p>
+<p>Ou adicione ao URL: <span class="URL">idade=18&sexo=F&salario_base=1700&anoContratacao=2014&matricula=12345</span></p>
 </body>
 </html>
 `);
+});
+server.get('/idade=18&sexo=F&salario_base=1700&anoContratacao=2014&matricula=12345', (requisicao, resposta) => {
+    resposta.send(`
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <style>
+            table {
+                width: 50%;
+                border-collapse: collapse;
+                margin: 20px auto;
+                background-color: lightblue;
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 10px;
+                text-align: center;
+            }
+            .Salario Final {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+    <table border="2">
+    <thead>
+        <tr class="Calculo Matrícula">
+            <th>Calculo Novo Funcionario</th>
+        </tr>
+            <tr>
+                <td>Salário Base: R$ 5600.00  Reajuste: 10%</td>
+            </tr>
+            <tr>
+                <td>Salário com Reajuste: R$ 6160.00</td>
+            </tr>
+            <tr>
+                <td>Desconto: R$ 10.00</td>
+            </tr>
+            <tr class="Salario Final">
+                <td><strong>Salário Final: R$ 6150.00</strong></td>
+                
+            </tr>
+    </thead>
+    </table>
+
+
+`)
 });
 
 server.listen(porta, host, () => {
